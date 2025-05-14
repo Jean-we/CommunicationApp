@@ -5,6 +5,10 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.core.window import Window
 from kivy.graphics import Color, Ellipse, Rectangle, Line
 from kivy.app import App
+from kivy.lang import Builder
+from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.popup import Popup
 
 # 检查版本
 kivy.require('1.0.6')
@@ -13,27 +17,12 @@ kivy.require('1.0.6')
 class Interface(App):
     # 返回根组件
     def build(self):
-        return AppWeight()
-
-
-class AppWeight(BoxLayout):
-
-    # 返回根控件，用于定义不同区域的布局管理
-    def __init__(self):
-        super().__init__()
-        # 垂直布局
-        layout = BoxLayout(orientation='vertical')
-        # 基本控件绘制
-        with self.canvas.before:
-            # 窗口大小(仅限桌面级app)
-            Window.size = (350,800)
-            # 窗口底色(RGB)
-            Window.clearcolor = (1,1,1,1)
-
-
-
-
-
+        return Builder.load_file(
+            "/Users/jean/Desktop/python项目实战/CommunicationApplication/controls/widget.kv"
+        )
+    
+    def add_friends(self):
+        pass
 
 
 

@@ -1,0 +1,15 @@
+#:kivy 1.0
+
+Button:
+    # 左上角加号photo
+    background_normal: '/Users/jean/Desktop/python项目实战/CommunicationApplication/Images/widget silce/Plus Sign.png'
+    # 禁止尺寸自动调整
+    size_hint: None, None
+    # 设置大小绝对尺寸widget/hight
+    size: 100,100
+    # 设置位置
+    pos_hint: {'x': 0.003, 'y': 0.915}
+    # 调用main.py文件中类的方法；添加好友
+    on_press: app.add_friends()  #on_press是通过app对象调用的,但kivy一开始就创建了app对象,所以在app对象创建之前就会调用这个方法
+
+
