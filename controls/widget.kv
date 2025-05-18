@@ -1,15 +1,26 @@
-#:kivy 1.0
+# 根组件
+FloatLayout:
+    # 锤子布局
+    orientation: 'vertical'
 
-Button:
-    # 左上角加号photo
-    background_normal: '/Users/jean/Desktop/python项目实战/CommunicationApplication/Images/widget silce/Plus Sign.png'
-    # 禁止尺寸自动调整
-    size_hint: None, None
-    # 设置大小绝对尺寸widget/hight
-    size: 100,100
-    # 设置位置
-    pos_hint: {'x': 0.003, 'y': 0.915}
-    # 调用main.py文件中类的方法；添加好友
-    on_press: app.add_friends()  #on_press是通过app对象调用的,但kivy一开始就创建了app对象,所以在app对象创建之前就会调用这个方法
-
-
+    # 控件1左上角加号
+    Button:  
+        size_hint: None, None
+        # 按钮的点击区域
+        size: 100, 100  
+        # 按钮的坐标位置/相对
+        pos_hint: {'x': 0.001, 'y': 0.933}
+        # 点击反应时间
+        on_press: print("你点击了 + 按钮")
+        # 设置按钮背景颜色为白色
+        background_color: 0, 0, 0, 0
+        # 绘画指令
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 1
+            Line:
+                width: 2
+                points: [4, 1545, 104, 1545]  # 横线
+            Line:
+                width: 2
+                points: [51, 1594, 51, 1494]  # 竖线

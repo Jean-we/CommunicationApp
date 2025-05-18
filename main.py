@@ -1,50 +1,30 @@
-import kivy
-'''盒子管理器'''
-from kivy.uix.boxlayout import BoxLayout
-'''窗口'''
-from kivy.core.window import Window
-from kivy.graphics import Color, Ellipse, Rectangle, Line
 from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.core.window import Window
 from kivy.lang import Builder
-from kivy.uix.button import Button
 from kivy.uix.label import Label
-from kivy.uix.popup import Popup
+from kivy.core.image import Image as ComcoreImage
 
-# 检查版本
-kivy.require('1.0.6')
 
-# APP界面，继承APP父类
+# 确保版本
+kivy_version = "2.1.0"
+
+
+# App入口
 class Interface(App):
-    # 返回根组件
+    def __init__(self):
+        super().__init__()
+        self.title = "Communication Application"
+        # 设置窗口大小
+        Window.size = (400, 800)
+        # 设置窗口颜色RGB(white Color)
+        Window.clearcolor = (1, 1, 1, 1)
+        
+
+    # 返回根控件
     def build(self):
         return Builder.load_file(
             "/Users/jean/Desktop/python项目实战/CommunicationApplication/controls/widget.kv"
         )
-    
-    def add_friends(self):
-        pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     Interface().run()
