@@ -3,9 +3,9 @@ FloatLayout:
     # 锤子布局
     orientation: 'vertical'
 
-    # 控件1左上角加号
+    # 加号按钮
     Button:  
-        size_hint: None, None
+        id: add_button
         # 按钮的点击区域
         size: 100, 100  
         # 按钮的坐标位置/相对
@@ -17,10 +17,22 @@ FloatLayout:
         # 绘画指令
         canvas:
             Color:
-                rgba: 0, 0, 0, 1
+                rgba: 0, 0, 0, 0.5 # 透明度
             Line:
                 width: 2
-                points: [4, 1545, 104, 1545]  # 横线
+                points: [4, 1545, 64, 1545]  # 横线
             Line:
                 width: 2
-                points: [51, 1594, 51, 1494]  # 竖线
+                points: [32, 1575, 32, 1515]  # 竖线
+
+    # 文字标签
+    Label:
+        id: text_label
+        # 标签大小
+        size: 150,100
+        # 标签位置/相对
+        pos_hint: {'x': 0.5, 'y': 0.5}
+        # 标签文本  
+        txet: 'Contact'
+        # 标签文本颜色
+        color: 0, 0, 0, 0.5 # 透明度
