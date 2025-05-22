@@ -10,10 +10,10 @@ from kivy.uix.floatlayout import FloatLayout
 kivy_version = "2.1.0"
 
 
-class Widget(FloatLayout):
+class MainWidget(FloatLayout):
     def __init__(self):
         super().__init__()
-        pass
+
 
     def loading_file(self):
         pass
@@ -31,11 +31,11 @@ class Interface(App):
 
     # 返回根控件
     def build(self):
-        # 加载kv文件
+        # 加载.kv file
         Builder.load_file(
-            "/Users/jean/Desktop/python项目实战/CommunicationApplication/controls/widget.kv"
+            "/Users/jean/Desktop/python/CommunicationApplication/controls/widget.kv"
         )
-        return Widget()
+        return MainWidget()
 
 
 if __name__ == "__main__":

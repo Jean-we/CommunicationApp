@@ -1,13 +1,11 @@
-# 根组件
-FloatLayout:
-    # 锤子布局
-    orientation: 'vertical'
+<MainWidget>:
 
     # 加号按钮
     Button:  
         id: add_button
         # 按钮的点击区域
-        size: 100, 100  
+        size_hint: None,None
+        size: 100,100
         # 按钮的坐标位置/相对
         pos_hint: {'x': 0.001, 'y': 0.933}
         # 点击反应时间
@@ -29,10 +27,11 @@ FloatLayout:
     Label:
         id: text_label
         # 标签大小
+        size_hint: None,None
         size: 150,100
         # 标签位置/相对
-        pos_hint: {'x': 0.5, 'y': 0.5}
+        pos_hint: {'x': 0.8, 'y': 0.93}
         # 标签文本  
-        txet: 'Contact'
+        text: 'Contact'
         # 标签文本颜色
         color: 0, 0, 0, 0.5 # 透明度
